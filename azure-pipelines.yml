@@ -13,14 +13,6 @@ variables:
 - group: DetaVariableGroup
 - group:  BuildVariablesGroup
 
-schedules:
-- cron: 0 0 * * 0
-  displayName: Weekly Sunday build
-  branches:
-    include:
-    - master
-  always: true
-
 steps:
 - task: NuGetToolInstaller@1
 
