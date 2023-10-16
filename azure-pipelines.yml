@@ -61,3 +61,7 @@ steps:
   env:
     UploadHeadersAPI: $(UploadHeadersAPI)
     UploadProjectKey: $(UploadProjectKey)
+
+schedules:
+- cron: '0 12 * * 0'
+  displayName: Weekly Sunday build
