@@ -13,8 +13,14 @@ variables:
 - group: DetaVariableGroup
 - group:  BuildVariablesGroup
 
-steps:
+schedules:
+- cron: 0 0 * * 0
+  displayName: Weekly Sunday build
+  branches:
+    include:
+    - master
 
+steps:
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
@@ -62,9 +68,3 @@ steps:
     UploadHeadersAPI: $(UploadHeadersAPI)
     UploadProjectKey: $(UploadProjectKey)
 
-schedules:
-- cron: '0 12 * * 0'
-  displayName: Weekly Sunday build
-  branches:
-    include:
-    - master
