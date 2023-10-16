@@ -19,6 +19,7 @@ schedules:
   branches:
     include:
     - master
+  always: true
 
 steps:
 - task: NuGetToolInstaller@1
